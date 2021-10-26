@@ -1,66 +1,66 @@
 | Folder Name | Field Name                   | Field Type | Observation
-| FOGOS       | Codigo_SGIF                  | Texto      |
-| FOGOS       | Codigo_ANEPC                 | Numero     |
-| FOGOS       | Ano                          | Numero     | Tabela Data
-| FOGOS       | Mes                          | Numero     | Tabela Data
-| FOGOS       | Dia                          | Numero     | Tabela Data
-| FOGOS       | Hora                         | Numero     |
-| FOGOS       | AreaPov                      | Decimal    |
-| FOGOS       | AreaMato                     | Decimal    |
-| FOGOS       | AreaAgric                    | Decimal    |
-| FOGOS       | AreaTotal                    | Decimal    |
-| FOGOS       | ClasseArea                   | Texto      | range em hectares
-| FOGOS       | DataHoraAlerta               | Numero     | Deve ser feito um split de dados
-| FOGOS       | DataHora_PrimeiraIntervencao | Numero     | ? tem um formato de hora estranho (time stamp?)
-| FOGOS       | DataHora_Extincao            | Numero     | ? tem um formato de hora estranho (time stamp?)
-| FOGOS       | Duracao_Horas                | Numero     | ? tem um formato de hora estranho (time stamp?)
-| FOGOS       | IncSup24horas                | Numero     |
-| FOGOS       | DTCCFR                       | Numero     |
-| FOGOS       | Distrito                     | Texto      | tabela DimLocation (Distrito)
-| FOGOS       | Concelho                     | Texto      | tabela DimLocation (Concelho(IdDistrito))
-| FOGOS       | Freguesia                    | Texto      | tabela DimLocation (Freguesia(IdConcelho))
-| FOGOS       | Local                        | Texto      | tabela DimLocation (Local(IdFreguesia))
-| FOGOS       | RNAP                         | Texto      | tabela ?, tem dados repetidos logo deve ser uma tabela, mas não sei o que as siglas significam (Rede Nacional de Áreas Protegidas)
-| FOGOS       | RNMNPF                       | Texto      | tabela ?, tem dados repetidos logo deve ser uma tabela, mas não sei o que as siglas significam (Rede Nacional de Matas Nacionais e Perímetros Florestais)
-| FOGOS       | X_Militar                    | Numero     |
-| FOGOS       | Y_Militar                    | Numero     |
-| FOGOS       | Latitude                     | Numero     |
-| FOGOS       | Longitude                    | Numero     |
-| FOGOS       | X_ETRS89                     | Numero     |
-| FOGOS       | Y_ETRS89                     | Numero     |
-| FOGOS       | DSR                          | Numero     |
-| FOGOS       | FWI                          | Numero     |
-| FOGOS       | ISI                          | Numero     |
-| FOGOS       | DC                           | Numero     |
-| FOGOS       | DMC                          | Numero     |
-| FOGOS       | FFMC                         | Numero     |
-| FOGOS       | BUI                          | Numero     |
-| FOGOS       | CodCausa                     | Numero     | tabela DimFireCause (ID,TipoCausa,GrupoCausa,DescricaoCausa)
-| FOGOS       | TipoCausa                    | Texto      | tabela DimFireCause
-| FOGOS       | GrupoCausa                   | Texto      | tabela DimFireType (cada registo deste deve ter um TipoCausa)
-| FOGOS       | DescricaoCausa               | Texto      | tabela DimFireType
-| FOGOS       | FonteAlerta                  | Texto      | tabela DimFireOrigin (renomear tabela para nome mais coerente, já que os dados não satisfazem a ideia original)
-| IPMA        | ESTACAO                      | Texto      | Tabela DimLocation (Distrito)
-| IPMA        | NUM                          | Numero     | Este número é o número da estação
-| IPMA        | ANO                          | Numero     | Tabela DimDate
-| IPMA        | MES                          | Numero     | Tabela DimDate
-| IPMA        | DIA                          | Numero     | Tabela DimDate
-| IPMA        | TEMP                         | Numero     | 
-| IPMA        | HR                           | Numero     | 
-| IPMA        | VENTO                        | Numero     | 
-| IPMA        | PREC                         | Numero     | 
-| IPMA        | FFMC                         | Numero     | 
-| IPMA        | DMC                          | Numero     | 
-| IPMA        | DC                           | Numero     | 
-| IPMA        | ISI                          | Numero     | 
-| IPMA        | BUI                          | Numero     | 
-| IPMA        | FWI                          | Numero     | 
-| IPMA        | DSR                          | Numero     | 
-| ESTACOES    | Nome                         | Texto      | Nome da estação
-| ESTACOES    | Número                       | Numero     | Que corresponde ao NUM do ARQ_FWI_OBS_XXXX_REP_CLI.txt
-| ESTACOES    | Tipo                         | Texto      | Tabela StationType ? (fazer uma DimTable com esta info?)
-| ESTACOES    | Latitude                     | Decimal    |
-| ESTACOES    | Longitude                    | Decimal    |
+| FIRES       | Codigo_SGIF                  | Texto      |
+| FIRES       | Codigo_ANEPC                 | Numero     |
+| FIRES       | Ano                          | Numero     | Tabela DimDate
+| FIRES       | Mes                          | Numero     | Tabela DimDate
+| FIRES       | Dia                          | Numero     | Tabela DimDate
+| FIRES       | Hora                         | Numero     |
+| FIRES       | AreaPov                      | Decimal    |
+| FIRES       | AreaMato                     | Decimal    |
+| FIRES       | AreaAgric                    | Decimal    |
+| FIRES       | AreaTotal                    | Decimal    |
+| FIRES       | ClasseArea                   | Texto      | range em hectares
+| FIRES       | DataHoraAlerta               | TimeStamp  |
+| FIRES       | DataHora_PrimeiraIntervencao | TimeStamp  |
+| FIRES       | DataHora_Extincao            | TimeStamp  |
+| FIRES       | Duracao_Horas                | TimeStamp  |
+| FIRES       | IncSup24horas                | Numero     |
+| FIRES       | DTCCFR                       | Numero     |
+| FIRES       | Distrito                     | Texto      | DimLocation (Distrito)
+| FIRES       | Concelho                     | Texto      | DimLocation (Concelho(IdDistrito))
+| FIRES       | Freguesia                    | Texto      | DimLocation (Freguesia(IdConcelho))
+| FIRES       | Local                        | Texto      | DimLocation (Local(IdFreguesia))
+| FIRES       | RNAP                         | Texto      | Transformar noutra tabela ? sigla para (Rede Nacional de Áreas Protegidas)
+| FIRES       | RNMNPF                       | Texto      | Transformar noutra tabela ? sigla para (Rede Nacional de Matas Nacionais e Perímetros Florestais)
+| FIRES       | X_Militar                    | Numero     | DimLocation ?
+| FIRES       | Y_Militar                    | Numero     | DimLocation ?
+| FIRES       | Latitude                     | Decimal    | DimLocation ?
+| FIRES       | Longitude                    | Decimal    | DimLocation ?
+| FIRES       | X_ETRS89                     | Numero     | DimLocation ?
+| FIRES       | Y_ETRS89                     | Numero     | DimLocation ?
+| FIRES       | DSR                          | Numero     |
+| FIRES       | FWI                          | Numero     |
+| FIRES       | ISI                          | Numero     |
+| FIRES       | DC                           | Numero     |
+| FIRES       | DMC                          | Numero     |
+| FIRES       | FFMC                         | Numero     |
+| FIRES       | BUI                          | Numero     |
+| FIRES       | CodCausa                     | Numero     | DimFireCause (ID,TipoCausa,GrupoCausa,DescricaoCausa) Transformar noutra tabela
+| FIRES       | TipoCausa                    | Texto      | DimFireCause Transformar noutra tabela
+| FIRES       | GrupoCausa                   | Texto      | DimFireType (cada registo deste deve ter um TipoCausa) Transformar noutra tabela
+| FIRES       | DescricaoCausa               | Texto      | DimFireType Transformar noutra tabela
+| FIRES       | FonteAlerta                  | Texto      | Transformar noutra tabela ? -> DimFireOrigin (renomear tabela para nome mais coerente, já que os dados não satisfazem a ideia original)
+| IPMA        | ESTACAO                      | Texto      | DimLocation
+| IPMA        | NUM                          | Numero     | ESTACOES.Número
+| IPMA        | ANO                          | Numero     | DimDate
+| IPMA        | MES                          | Numero     | DimDate
+| IPMA        | DIA                          | Numero     | DimDate
+| IPMA        | TEMP                         | Decimal    | 
+| IPMA        | HR                           | Decimal    | 
+| IPMA        | VENTO                        | Decimal    | 
+| IPMA        | PREC                         | Decimal    | 
+| IPMA        | FFMC                         | Decimal    | 
+| IPMA        | DMC                          | Decimal    | 
+| IPMA        | DC                           | Decimal    | 
+| IPMA        | ISI                          | Decimal    | 
+| IPMA        | BUI                          | Decimal    | 
+| IPMA        | FWI                          | Decimal    | 
+| IPMA        | DSR                          | Decimal    | 
+| ESTACOES    | Nome                         | Texto      | 
+| ESTACOES    | Número                       | Numero     | IPMA.NUM
+| ESTACOES    | Tipo                         | Texto      | Transformar noutra tabela ?
+| ESTACOES    | Latitude                     | Decimal    | DimLocation ?
+| ESTACOES    | Longitude                    | Decimal    | DimLocation ?
 | ESTACOES    | Altitude                     | Decimal    |
-| ESTACOES    | Município                    | Texto      | Tabela DimLocation (Concelho(IdConcelho))
-| ESTACOES    | Início de funcionamento      | Texto      | Tabela DimDate (precisamos mesmo disto?)
+| ESTACOES    | Município                    | Texto      | DimLocation (Concelho(IdConcelho))
+| ESTACOES    | Início de funcionamento      | Texto      | DimDate ?
